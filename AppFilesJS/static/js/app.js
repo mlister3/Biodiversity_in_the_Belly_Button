@@ -4,16 +4,22 @@ const url = "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/
 // Read JSON from URL
 d3.json(url).then(function(data) {
     console.log(data);
-
-    // Get dropdown menu and fill with options
-    var dropdownMenu = d3.select("#selDataset");
-    var ids = data.names;
+    
+// Get dropdown menu and fill with options
+    let dropdownMenu = d3.select("#selDataset");
+    let ids = data.names;
     ids.forEach(function(id) {
         dropdownMenu.append("option").text(id).property("value", id);
     });
 
+    function updatePlots(selectedID) {            
+    }  
+
 });
 
-let sorted = data.samples.sort((a, b) => b.sample_values - a.sample_values);
-sortedTopTen = sorted.slice(0, 10).reverse();
-console.log(sortedTopTen);
+function optionChanged(value) {
+    console.log(`Selected option: ${value}`);
+    let selectedID = value;
+}
+
+d3.selectAll("#selDataset").on("change", updatePlots);
