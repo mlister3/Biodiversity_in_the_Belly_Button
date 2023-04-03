@@ -1,25 +1,42 @@
-// Set constant URL
-const url = "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
-
-// Read JSON from URL
-d3.json(url).then(function(data) {
-    console.log(data);
-    
-// Get dropdown menu and fill with options
-    let dropdownMenu = d3.select("#selDataset");
-    let ids = data.names;
-    ids.forEach(function(id) {
-        dropdownMenu.append("option").text(id).property("value", id);
-    });
-
-    function updatePlots(selectedID) {            
-    }  
-
-});
-
 function optionChanged(value) {
     console.log(`Selected option: ${value}`);
-    let selectedID = value;
+    console.log(names);
+    updatePlots(value);
 }
 
-d3.selectAll("#selDataset").on("change", updatePlots);
+function updatePlots(selectedID) {
+    console.log("Updating...");
+    //barPlot();
+    console.log("Done.");
+    TestSubject = samples[selectedID];
+    console.log(samples);
+    //let otuIDs = TestSubject.otu_ids;
+    //let sampleValues = TestSubject.sample_values;
+    //let otuLabels = TestSubject.otu_labels;
+    //console.log(otuIDS);           
+};  
+
+function barPlot() {
+    let otuIDs = samples.otu_ids;
+    let sampleValues = samples.sample_values;
+    let otuLabels = samples.otu_labels;
+
+    let trace = {
+        x: sampleValues,
+        y: otuIDs.map(id => `OTU ${id}`),
+        text: otuLabels,
+        type: "bar",
+        orientation: "h"
+    };
+
+    let data = [trace];
+
+    let layout = {
+        title: `Top 10 OTUs for Test Subject ID ${selectedID}`,
+        xaxis: { title: "Sample Values" },
+        yaxis: { title: "OTU IDs" }
+    };
+
+    // Plot the chart
+    Plotly.newPlot("bar", data, layout);
+};
