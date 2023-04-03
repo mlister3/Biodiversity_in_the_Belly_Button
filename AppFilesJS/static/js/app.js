@@ -1,42 +1,39 @@
 function optionChanged(value) {
     console.log(`Selected option: ${value}`);
-    console.log(names);
     updatePlots(value);
 }
 
-function updatePlots(selectedID) {
+function updatePlots(value) {
     console.log("Updating...");
-    //barPlot();
-    console.log("Done.");
-    TestSubject = samples[selectedID];
-    console.log(samples);
-    //let otuIDs = TestSubject.otu_ids;
-    //let sampleValues = TestSubject.sample_values;
-    //let otuLabels = TestSubject.otu_labels;
-    //console.log(otuIDS);           
-};  
+    subjectSearch(value);
+}; 
 
-function barPlot() {
-    let otuIDs = samples.otu_ids;
-    let sampleValues = samples.sample_values;
-    let otuLabels = samples.otu_labels;
+function subjectSearch(value) {
+    let subjectInfo = samples.find(obj => obj.id === value);
+
+    let otuIDs = subjectInfo.otu_ids;
+    console.log(otuIDs); //y
+
+    let sampleValues = subjectInfo.sample_values;
+    console.log(sampleValues); //x
+
+    let otuLabels = subjectInfo.otu_labels;
+    console.log(otuLabels); 
+};
+
+function barPlot(value, xdata, ydata) {
 
     let trace = {
-        x: sampleValues,
-        y: otuIDs.map(id => `OTU ${id}`),
-        text: otuLabels,
+        x: xdata,
+        y: ydata.map(id => `OTU ${ydata}`),
+        text: labels,
         type: "bar",
         orientation: "h"
     };
 
     let data = [trace];
 
-    let layout = {
-        title: `Top 10 OTUs for Test Subject ID ${selectedID}`,
-        xaxis: { title: "Sample Values" },
-        yaxis: { title: "OTU IDs" }
-    };
-
     // Plot the chart
     Plotly.newPlot("bar", data, layout);
+    console.log("Bar Done.");
 };
