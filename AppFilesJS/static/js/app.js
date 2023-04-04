@@ -4,11 +4,6 @@ function optionChanged(value) {
 }
 
 function updatePlots(value) {
-    console.log("Updating...");
-    subjectSearch(value);
-}; 
-
-function subjectSearch(value) {
     let subjectInfo = samples.find(obj => obj.id === value);
 
     let sampleValues = subjectInfo.sample_values.slice(0, 10).reverse();
