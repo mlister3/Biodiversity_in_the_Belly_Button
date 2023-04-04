@@ -25,10 +25,12 @@ loadData()
     .then((data) => {
     console.log("Callback function called");
     console.log("Data loaded:", data);
+    updatePlots("940");
     
     // Get dropdown menu and fill with options
     let dropdownMenu = d3.select("#selDataset");
     names.forEach(function(id) {
         dropdownMenu.append("option").text(id).property("value", id);
     });
+    
     })

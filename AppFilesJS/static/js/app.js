@@ -11,34 +11,26 @@ function updatePlots(value) {
 function subjectSearch(value) {
     let subjectInfo = samples.find(obj => obj.id === value);
 
-    let sampleValues = subjectInfo.sample_values.slice(0, 10);
-    console.log(sampleValues); //x
+    let sampleValues = subjectInfo.sample_values.slice(0, 10).reverse();
 
-    let otuIDs = subjectInfo.otu_ids.slice(0, 10);
-    console.log(otuIDs); //y
+    let otuIDs = subjectInfo.otu_ids.slice(0, 10).reverse();
 
     let otuLabels = subjectInfo.otu_labels;
-    console.log(otuLabels); 
 
     barPlot(sampleValues, otuIDs);
 };
 
 function barPlot(xdata, ydata) {
-
-    //let text = hoverData.map((xdata, index) => `hoverData: ${xdata}<br>y: ${y[index]}`);
-
+    
     let trace = {
-        values: xdata,
-        labels: ydata.map(id => `OTU ${ydata}`),
-    //    text: text,
-    //    mode: "markers",
+        x: xdata,
+        y: ydata.map(ydata => `OTU ${ydata}`),
+        text: ydata,
         type: "bar",
         orientation: "h"
     };
 
     let data = [trace];
 
-    // Plot the chart
     Plotly.newPlot("bar", data);
-    console.log("Bar Done.");
 };
