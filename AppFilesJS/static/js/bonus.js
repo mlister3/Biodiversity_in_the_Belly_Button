@@ -1,12 +1,11 @@
-function gaugePlot(wash) {
+function gaugePlot() {
     let trace3 = {
         type: "indicator",
         mode: "gauge",
-        value: wash,
+        value: 3,
         title: { text: "Belly Button Washing Frequency", font: { size: 24 } },
         gauge: {
-            axis: { range: [null, 500], tickwidth: 1, tickcolor: "darkblue" },
-            bar: { color: "darkblue" },
+            axis: { range: [null, 10], tickwidth: 1},
             bgcolor: "white",
             borderwidth: 2,
             bordercolor: "gray",

@@ -14,6 +14,7 @@ function updatePlots(value) {
 
     barPlot(sampleValues, otuIDs, otuLabels);
     bubblePlot(otuIDs, sampleValues, otuLabels);
+    gaugePlot();
 };
 
 function barPlot(xdata, ydata, hoverData) {
