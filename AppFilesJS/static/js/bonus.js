@@ -1,8 +1,10 @@
-function gaugePlot() {
-    let trace3 = {
+function gaugePlot(wf) {
+    let trace4 = {
         type: "indicator",
-        value: 3,
+        mode: "gauge",
+        value: wf,
         title: { text: "Belly Button Washing Frequency", font: { size: 24 } },
+        needle: "red",
         colorscales: "greens",
         gauge: {
             axis: { range: [null, 10], tickwidth: 1},
@@ -24,8 +26,8 @@ function gaugePlot() {
         }
     };
 
-    let data3 = [trace3];
+    let data4 = [trace4];
 
-    Plotly.newPlot('gauge', data3);
+    Plotly.newPlot('gauge', data4);
 
 };
