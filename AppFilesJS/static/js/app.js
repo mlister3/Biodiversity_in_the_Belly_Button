@@ -32,7 +32,6 @@ function barPlot(xdata, ydata, hoverData) {
 };
 
 function bubblePlot(xdata, ydata, textData){
-    console.log(xdata, ydata, textData);
     let trace2 = {
         x: xdata,
         y: ydata,
