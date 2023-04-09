@@ -22,14 +22,11 @@ function gaugePlot(wash) {
                 { range: [8, 9], color: ""},
                 { range: [9, 10], color: "royalblue" }
             ],
-            threshold: {
-            line: { color: "red", width: 4 },
-            thickness: 0.75,
-            value: 490
-            }
         }
     };
 
     let data3 = [trace3];
+
+    Plotly.newPlot('gauge', data3);
 
 };
