@@ -1,7 +1,7 @@
 function gaugePlot(wf) {
+   
     let base_chart = {
         // Chart data
-        value: wf,
         values: [5.6, 5.6, 5.6, 5.6, 5.6, 5.6, 5.6, 5.6, 5.6, 49.6],
         labels: ["0-1", "1-2", "2-3", "3-4", "4-5", "5-6", "6-7", "7-8", "8-9", " "],
         // Chart color set
@@ -31,14 +31,37 @@ function gaugePlot(wf) {
         hoverinfo: "none",
         textinfo: "label",
         textposition: "inside"
-    };
+        //needle: {
+        //    value: wf,
+        //    rotation: -90.72,
+        //    thickness: 0.2,
+        //    line: {
+        //        color: "black",
+        //        width: 3
+        //    },
+        }
 
     let data4 = [base_chart];
 
-    let layout = {
+    let title = {
         margin: { t: 60 },
-        title: { text: "<b>Belly Button Washing Frequency</b><br>Scrubs per Week", font: { size: 18 } }
-    };
+        title: { text: "<b>Belly Button Washing Frequency</b><br>Scrubs per Week", font: { size: 18 } },
+        shapes: [{
+            type: 'path',
+            path: 'M 0.5 0.52 L 0.52 0.5 L 0.5 0.5 Z',
+            fillcolor: 'red',
+            line: {
+                color: 'red'
+            },
+            //xref: 'paper',
+            //yref: 'paper',
+            //x0: 0.45,
+            //x1: 0.55,
+            //y0: 0.25,
+            //y1: 0.85
+    }]
+    }
 
-    Plotly.newPlot('gauge', data4, layout);
+Plotly.newPlot('gauge', data4, title);
+
 };
