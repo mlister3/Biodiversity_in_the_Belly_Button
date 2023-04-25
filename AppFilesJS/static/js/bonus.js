@@ -1,9 +1,11 @@
 function gaugePlot(wf) {
     let base_chart = {
+        // Chart data
         value: wf,
         title: { text: "Belly Button Washing Frequency", font: { size: 24 } },
         values: [5.6, 5.6, 5.6, 5.6, 5.6, 5.6, 5.6, 5.6, 5.6, 49.6],
-        labels: ["0-1", "1-2", "2-3", "3-4", "4-5", "5-6", "6-7", "7-8", "8-9", ""],
+        labels: ["0-1", "1-2", "2-3", "3-4", "4-5", "5-6", "6-7", "7-8", "8-9", " "],
+        // Chart color set
         marker: {
             colors: 
                 ["rgba(248, 243, 236, 100)",
@@ -17,16 +19,15 @@ function gaugePlot(wf) {
                 "rgba(133, 180, 138, 100)",
                 "rgba(255, 255, 255, 0)"
                 ],
-            line: {
-                width: 1,
-                color: "Black"
-            }
+            axis: { range: [null, 9], tickwidth: 1}
         },
+        // Chart sizing
         rotation: -90.72,
-        name: "Gauge",
-        hole: 0.75,
-        type: "pie",
         direction: "clockwise",
+        name: "Gauge",
+        hole: 0.45,
+        type: "pie",
+        // Data Sort
         sort: false,
         showlegend: false,
         hoverinfo: "none",
