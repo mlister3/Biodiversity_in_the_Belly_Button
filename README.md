@@ -7,7 +7,7 @@ Welcome to the Belly Button Biodiversity Dashboard.
 
 - If you wish to view the HTML, please see the [index.html](index.html) file.
 
-- To see the JavaScript involved with the dashboard, please see the [JS page](AppFiles/static/js).
+- To see the JavaScript involved with the dashboard, please see the [JS page](AppFilesJS/static/js).
 
 ## Instructions
 
