@@ -51,6 +51,7 @@ function bubblePlot(xdata, ydata, textData){
     };
 
     let data2 = [trace2];
+    console.log(data2);
 
     Plotly.newPlot('bubble', data2);
 

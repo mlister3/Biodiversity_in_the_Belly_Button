@@ -2,7 +2,6 @@ function gaugePlot(wf) {
     let base_chart = {
         // Chart data
         value: wf,
-        title: { text: "Belly Button Washing Frequency", font: { size: 24 } },
         values: [5.6, 5.6, 5.6, 5.6, 5.6, 5.6, 5.6, 5.6, 5.6, 49.6],
         labels: ["0-1", "1-2", "2-3", "3-4", "4-5", "5-6", "6-7", "7-8", "8-9", " "],
         // Chart color set
@@ -19,24 +18,27 @@ function gaugePlot(wf) {
                 "rgba(133, 180, 138, 100)",
                 "rgba(255, 255, 255, 0)"
                 ],
-            axis: { range: [null, 9], tickwidth: 1}
         },
         // Chart sizing
         rotation: -90.72,
         direction: "clockwise",
-        name: "Gauge",
+        name: "gauge",
         hole: 0.45,
         type: "pie",
         // Data Sort
         sort: false,
         showlegend: false,
         hoverinfo: "none",
-        textinfo: "none",
-        textposition: "outside"
-    }
+        textinfo: "label",
+        textposition: "inside"
+    };
 
-let data4 = [base_chart];
+    let data4 = [base_chart];
 
-let plot = Plotly.newPlot('gauge', data4);
+    let layout = {
+        margin: { t: 60 },
+        title: { text: "<b>Belly Button Washing Frequency</b><br>Scrubs per Week", font: { size: 18 } }
+    };
 
+    Plotly.newPlot('gauge', data4, layout);
 };
