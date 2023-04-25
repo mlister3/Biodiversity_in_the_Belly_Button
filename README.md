@@ -12,6 +12,9 @@ Instructions
 
     - Use otu_labels as the hovertext for the chart.
 
+See below:
+[Horizontal Bar Chart](Images/hw01.png)
+
 
 
 3. Create a bubble chart that displays each sample.
