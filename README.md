@@ -13,6 +13,7 @@ Instructions
     - Use otu_labels as the hovertext for the chart.
 
 See below:
+
 ![Horizontal Bar Chart](Images/hw01.png)
 
 
