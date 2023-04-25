@@ -3,7 +3,11 @@
 
 Welcome to the Belly Button Biodiversity Dashboard.
 
-Following the instructions below in the "Instructions" section, a dashboard was created and deployed that you can use and interact with on this site [https://mlister3.github.io/Biodiversity_of_the_Belly_Button/](https://mlister3.github.io/Biodiversity_of_the_Belly_Button/)
+- Following the instructions below in the "Instructions" section, a dashboard was created and deployed that you can use and interact with on this site [https://mlister3.github.io/Biodiversity_of_the_Belly_Button/](https://mlister3.github.io/Biodiversity_of_the_Belly_Button/)
+
+- If you wish to view the HTML, please see the [index.html](index.html) file.
+
+- To see the JavaScript involved with the dashboard, please see the [JS page](AppFiles/static/js).
 
 ## Instructions
 
