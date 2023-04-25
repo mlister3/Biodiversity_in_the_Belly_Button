@@ -1,6 +1,11 @@
 # Biodiversity_of_the_Belly_Button
+## Deployed Dashboard
 
-Instructions
+Welcome to the Belly Button Biodiversity Dashboard.
+
+Following the instructions below in the "Instructions" section, a dashboard was created and deployed that you can use and interact with on this site [https://mlister3.github.io/Biodiversity_of_the_Belly_Button/](https://mlister3.github.io/Biodiversity_of_the_Belly_Button/)
+
+## Instructions
 
 1. Use the D3 library to read in `samples.json` from the URL `https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json`.
 
