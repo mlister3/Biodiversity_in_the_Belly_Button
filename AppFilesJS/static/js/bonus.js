@@ -35,31 +35,34 @@ function gaugePlot(wf) {
 
     let data4 = [base_chart];
 
-    let wfAngle = wf / 9 * 180
-
+    let wfAngle = calculateNeedlePosition(wf/9);
+    console.log(wfAngle);
+        
     let title = {
         margin: { t: 60 },
         title: { text: "<b>Belly Button Washing Frequency</b><br>Scrubs per Week", font: { size: 18 } },
         shapes: [{
             type: 'line',
             x0: 0.5,
-            x1: 0.2,
+            x1: wfAngle.x,
             y0: 0.5,
-            y1: 0.5,
+            y1: wfAngle.y,
             line: {
                 color: 'red',
                 width: 3
             },
-            transforms: [{
-                type: 'rotate',
-                angle: 90,
-                origin: [0.5, 0.5]
-            }],
             xref: 'paper',
             yref: 'paper'
         }]
     };
-    
+
+    function calculateNeedlePosition(theta) {
+        const r = 0.3 // radius
+        return {
+            x: Math.cos((theta) * Math.PI) * r * -1 + 0.5, // -1 inverts the direction of the rotation
+            y: Math.sin((theta) * Math.PI) * r + 0.5
+        }
+    };
 
 Plotly.newPlot('gauge', data4, title);
 
