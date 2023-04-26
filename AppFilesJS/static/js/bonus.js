@@ -31,36 +31,35 @@ function gaugePlot(wf) {
         hoverinfo: "none",
         textinfo: "label",
         textposition: "inside"
-        //needle: {
-        //    value: wf,
-        //    rotation: -90.72,
-        //    thickness: 0.2,
-        //    line: {
-        //        color: "black",
-        //        width: 3
-        //    },
         }
 
     let data4 = [base_chart];
+
+    let wfAngle = wf / 9 * 180
 
     let title = {
         margin: { t: 60 },
         title: { text: "<b>Belly Button Washing Frequency</b><br>Scrubs per Week", font: { size: 18 } },
         shapes: [{
-            type: 'path',
-            path: 'M 0.5 0.52 L 0.52 0.5 L 0.5 0.5 Z',
-            fillcolor: 'red',
+            type: 'line',
+            x0: 0.5,
+            x1: 0.2,
+            y0: 0.5,
+            y1: 0.5,
             line: {
-                color: 'red'
+                color: 'red',
+                width: 3
             },
-            //xref: 'paper',
-            //yref: 'paper',
-            //x0: 0.45,
-            //x1: 0.55,
-            //y0: 0.25,
-            //y1: 0.85
-    }]
-    }
+            transforms: [{
+                type: 'rotate',
+                angle: 90,
+                origin: [0.5, 0.5]
+            }],
+            xref: 'paper',
+            yref: 'paper'
+        }]
+    };
+    
 
 Plotly.newPlot('gauge', data4, title);
 
