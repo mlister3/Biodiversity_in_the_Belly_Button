@@ -41,7 +41,21 @@ function gaugePlot(wf) {
     let title = {
         margin: { t: 60 },
         title: { text: "<b>Belly Button Washing Frequency</b><br>Scrubs per Week", font: { size: 18 } },
-        shapes: [{
+        shapes: [
+            {
+                type: 'circle',
+                xref: 'paper',
+                yref: 'paper',
+                fillcolor: 'red',
+                x0: 0.485,
+                y0: 0.485,
+                x1: 0.515,
+                y1: 0.515,
+                line: {
+                    color: 'red'
+                }
+            },
+            {
             type: 'line',
             x0: 0.5,
             x1: wfAngle.x,
@@ -53,7 +67,8 @@ function gaugePlot(wf) {
             },
             xref: 'paper',
             yref: 'paper'
-        }]
+            }
+        ]
     };
 
     function calculateNeedlePosition(theta) {
